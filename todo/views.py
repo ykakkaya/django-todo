@@ -5,8 +5,9 @@ from todo.models import Todo
 
 def todo_list(request):
     todos=Todo.objects.all()
-    contex={
+    context={
         'todos': todos
     }
-    return render(request, 'pages/todo_list.html', contex)
+    return render(request, 'pages/todo_list.html', context)
 
+  

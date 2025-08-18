@@ -1,7 +1,16 @@
 {% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
   {% include "layouts/header.html" %}
+  </head>
   <body>
+    {% include "todo/components/navbar.html" %}
+       <main class="container mt-4">
     {% block content %}{% endblock content %}
+    </main>
+    {% include "layouts/footer.html" %}
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   </body>
+  
 </html>
