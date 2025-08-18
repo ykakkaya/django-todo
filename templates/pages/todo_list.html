@@ -1,0 +1,29 @@
+
+{% extends "layouts/master.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+<h1>Todo List</h1>
+
+<ul>
+    {% for todo in todos %}
+    <li>
+        <span>{{ todo.title }}</span>
+        <span> - </span>
+        <span>{{ todo.description }}</span>
+        <span> - </span>
+        <span>{{ todo.created_at }}</span>
+        <span> - </span>
+        <span>{{ todo.is_active }}</span>
+        <span> - </span>
+        <a href="#" class='btn btn-warning btn-sm' >Düzenle</a>
+        <span> | </span>
+        <a href="#" class='btn btn-danger btn-sm'>Sil</a>
+    </li>
+    {% empty %}
+    <li>Todo Bulunamadı</li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock content %}  
