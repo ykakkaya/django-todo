@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from todo.models import Todo
 
@@ -10,4 +10,9 @@ def todo_list(request):
     }
     return render(request, 'pages/todo_list.html', context)
 
-  
+def todo_detail(request, pk):
+    todo = get_object_or_404(Todo, pk=pk)
+    context = {
+        'todo': todo
+    }
+    return render(request, 'pages/todo_detail.html', context)

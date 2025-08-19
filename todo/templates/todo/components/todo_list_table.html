@@ -11,16 +11,18 @@
   </thead>
   <tbody>
      {% for todo in todos %}
-        <tr>
+       <tr>
             <th scope="row">{{ todo.id }}</th>
             <td>{{ todo.title }}</td>
             <td>{{ todo.description }}</td>
             <td>{{ todo.is_active|yesno:"Aktif,Pasif" }}</td>
             <td>{{ todo.created_at|date:"D d M Y" }}</td>
             <td>
+              <a href="{% url 'todo_detail' todo.id %}" class='btn btn-info btn-sm'>Detaya Git </a>
                 <a href="#" class='btn btn-warning btn-sm' >Düzenle</a>
                 <a href="#" class='btn btn-danger btn-sm'>Sil</a>
             </td>
+            
         </tr>
     {% empty %}
         <tr>

@@ -1,0 +1,19 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+<h1>Todo Detay Sayfası</h1>
+<p><strong>Başlık:</strong> {{ todo.title }}</p>
+<p><strong>Açıklama:</strong> {{ todo.description }}</p>
+<p><strong>Aktif:</strong> {{ todo.is_active|yesno:"Aktif,Pasif"}}</p>
+
+<p><strong>Oluşturulma Tarihi:</strong> {{ todo.created_at }}</p>
+<p><strong>Güncellenme Tarihi:</strong> {{ todo.updated_at }}</p>
+<p><strong>Kategori:</strong> {{ todo.category.title }}</p>
+
+
+<a href="{% url 'home' %}" class="btn btn-primary">Geri Dön</a>
+
+</div>
+{% endblock content %}  
