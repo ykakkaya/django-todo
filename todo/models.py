@@ -5,6 +5,7 @@ from autoslug import AutoSlugField
 class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name='Kategori Adı')
     slug = AutoSlugField(populate_from='title',unique=True, verbose_name='Slug')
+    is_active = models.BooleanField(default=True, verbose_name='Aktif mi?')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Oluşturulma Tarihi')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Güncellenme Tarihi')
 

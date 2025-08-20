@@ -4,7 +4,7 @@ from .models import Category, Todo
 
 # Register your models here.
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ["title", "slug", "created_at", "updated_at"]
+    list_display = ["title", "slug", "is_active","created_at", "updated_at"]
     search_fields = ["title"]
     ordering = ["-created_at"]
     

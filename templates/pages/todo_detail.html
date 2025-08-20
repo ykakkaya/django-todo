@@ -11,6 +11,7 @@
 <p><strong>Oluşturulma Tarihi:</strong> {{ todo.created_at }}</p>
 <p><strong>Güncellenme Tarihi:</strong> {{ todo.updated_at }}</p>
 <p><strong>Kategori:</strong> {{ todo.category.title }}</p>
+<p><strong>Kategori Durumu:</strong> {{ todo.category.is_active | yesno:"Aktif,Pasif"}}</p>
 
 
 <a href="{% url 'home' %}" class="btn btn-primary">Geri Dön</a>
